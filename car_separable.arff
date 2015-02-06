@@ -1,0 +1,18 @@
+% Author: Jae Lee
+
+
+@RELATION car
+
+@ATTRIBUTE height	REAL
+@ATTRIBUTE horsepower 	REAL
+@ATTRIBUTE class 	{Sedan, Truck}
+
+@DATA
+-1,0,Truck
+-0.8,0.4,Truck
+-0.5,0.5,Truck
+0.2,1,Truck
+-1,-1,Sedan
+0,0,Sedan
+1,0,Sedan
+1,-0.5,Sedan
