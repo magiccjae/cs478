@@ -1,0 +1,9 @@
+@RELATION short
+
+@ATTRIBUTE length 	REAL
+@ATTRIBUTE width	REAL
+@ATTRIBUTE class 	{0,1}
+
+@DATA
+0,0,1
+0,1,0

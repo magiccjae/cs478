@@ -78,7 +78,7 @@ public abstract class SupervisedLearner {
 				predict(feat, prediction);
 				int pred = (int)prediction[0];
 				
-//				System.out.println("target: " + targ + "      " + "predicted: " + pred);
+				System.out.println("target: " + targ + "      " + "predicted: " + pred);
 //				System.out.println();
 				
 				if(confusion != null)
