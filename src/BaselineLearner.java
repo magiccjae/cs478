@@ -32,4 +32,10 @@ public class BaselineLearner extends SupervisedLearner {
 				
 	}
 
+	@Override
+	public double predict(double[] features, int target) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

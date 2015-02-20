@@ -4,9 +4,7 @@
 // ----------------------------------------------------------------
 
 
-import java.util.ArrayList;
 import java.util.Random;
-import java.io.File;
 
 
 public class MLSystemManager {
@@ -28,8 +26,8 @@ public class MLSystemManager {
 
 		//args = new String[]{"-L", "baseline", "-A", "data/iris.arff", "-E", "cross", "10", "-N"};
 
-		//Random rand = new Random(1234); // Use a seed for deterministic results (makes debugging easier)
-		Random rand = new Random(); // No seed for non-deterministic results
+		Random rand = new Random(1234); // Use a seed for deterministic results (makes debugging easier)
+//		Random rand = new Random(); // No seed for non-deterministic results
 
 		//Parse the command line arguments
 		ArgParser parser = new ArgParser(args);

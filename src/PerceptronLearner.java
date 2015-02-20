@@ -223,4 +223,11 @@ public class PerceptronLearner extends SupervisedLearner {
 		return current_accuracy;
 	}
 
+
+	@Override
+	public double predict(double[] features, int target) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

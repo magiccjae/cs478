@@ -18,6 +18,8 @@ public abstract class SupervisedLearner {
 	// support multi-dimensional label vectors.)
 	public abstract void predict(double[] features, double[] labels) throws Exception;
 
+	public abstract double predict(double[] features, int target) throws Exception;
+	
 	// The model must be trained before you call this method. If the label is nominal,
 	// it returns the predictive accuracy. If the label is continuous, it returns
 	// the root mean squared error (RMSE). If confusion is non-NULL, and the
@@ -59,6 +61,8 @@ public abstract class SupervisedLearner {
 			}
 			int correctCount = 0;
 			double[] prediction = new double[1];
+			
+			double mse = 0;
 			for(int i = 0; i < features.rows(); i++)
 			{
 				double[] feat = new double[features.cols()];
@@ -76,9 +80,10 @@ public abstract class SupervisedLearner {
 				if(targ >= labelValues)
 					throw new Exception("The label is out of range");
 				predict(feat, prediction);
+				mse += predict(feat, targ);				
 				int pred = (int)prediction[0];
 				
-				System.out.println("target: " + targ + "      " + "predicted: " + pred);
+//				System.out.println("target: " + targ + "      " + "predicted: " + pred);
 //				System.out.println();
 				
 				if(confusion != null)
@@ -86,6 +91,7 @@ public abstract class SupervisedLearner {
 				if(pred == targ)
 					correctCount++;
 			}
+			System.out.println("test_mse: " + mse/features.rows());
 			return (double)correctCount / features.rows();
 		}
 	}
