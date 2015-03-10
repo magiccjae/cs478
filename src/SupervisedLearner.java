@@ -91,7 +91,7 @@ public abstract class SupervisedLearner {
 				if(pred == targ)
 					correctCount++;
 			}
-			System.out.println("test_mse: " + mse/features.rows());
+//			System.out.println("test_mse: " + mse/features.rows());
 			return (double)correctCount / features.rows();
 		}
 	}
