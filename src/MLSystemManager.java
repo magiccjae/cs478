@@ -18,7 +18,7 @@ public class MLSystemManager {
 		else if (model.equals("perceptron")) return new PerceptronLearner(rand);
 		 else if (model.equals("backpropagation")) return new BackpropagationLearner(rand);
 		 else if (model.equals("decisiontree")) return new DecisionTree();
-		// else if (model.equals("knn")) return new InstanceBasedLearner();
+		 else if (model.equals("knn")) return new InstanceBasedLearner();
 		else throw new Exception("Unrecognized model: " + model);
 	}
 
@@ -94,8 +94,8 @@ public class MLSystemManager {
 			learner.train(features, labels);
 			double elapsedTime = System.currentTimeMillis() - startTime;
 			System.out.println("Time to train (in seconds): " + elapsedTime / 1000.0);
-			double trainAccuracy = learner.measureAccuracy(features, labels, null);
-			System.out.println("Training set accuracy: " + trainAccuracy);
+//			double trainAccuracy = learner.measureAccuracy(features, labels, null);
+//			System.out.println("Training set accuracy: " + trainAccuracy);
 			Matrix testFeatures = new Matrix(testData, 0, 0, testData.rows(), testData.cols() - 1);
 			Matrix testLabels = new Matrix(testData, 0, testData.cols() - 1, testData.rows(), 1);
 			Matrix confusion = new Matrix();
